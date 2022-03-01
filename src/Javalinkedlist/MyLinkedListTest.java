@@ -2,14 +2,14 @@ package Javalinkedlist;
 
 public class MyLinkedListTest {
     public static void main(String[] args) {
-        MyNode myFirstNode = new MyNode<Integer>(70);
+        MyNode myFirstNode = new MyNode<Integer>(56);
         MyNode mySecondNode = new MyNode<Integer>(30);
-        MyNode myThirdNode = new MyNode<Integer>(56);
+        MyNode myThirdNode = new MyNode<Integer>(70);
 
         MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.add(myFirstNode);
-        myLinkedList.add(mySecondNode);
-        myLinkedList.add(myThirdNode);
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
         myLinkedList.printNodes();
 
     }

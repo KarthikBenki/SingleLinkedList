@@ -5,9 +5,10 @@ public class MyLinkedList {
     private INode head;
 
     public MyLinkedList() {
-        this.head=null;
-        this.tail=null;
+        this.head = null;
+        this.tail = null;
     }
+
     /*
        @purpose: Ability to add node
        @param: Takes a newNode as a input
@@ -19,9 +20,9 @@ public class MyLinkedList {
             this.tail = newNode;
         if (this.head == null)
             this.head = newNode;
-        else{
-            INode tempNode=this.head;
-            this.head=newNode;
+        else {
+            INode tempNode = this.head;
+            this.head = newNode;
             newNode.setNext(tempNode);
         }
     }
@@ -32,17 +33,18 @@ public class MyLinkedList {
     @function : Adds new node to last of existing node.
     @return: No return value.
      */
-    public void append(INode newNode){
-        if(this.head==null)
-            this.head=newNode;
-        if(this.tail==null)
-            this.tail=newNode;
-        else{
+    public void append(INode newNode) {
+        if (this.head == null)
+            this.head = newNode;
+        if (this.tail == null)
+            this.tail = newNode;
+        else {
             this.tail.setNext(newNode);
-            this.tail=newNode;
+            this.tail = newNode;
         }
 
     }
+
     /*
         @purpose: Ability print nodes.
         @param: No parameters.
@@ -50,34 +52,67 @@ public class MyLinkedList {
         sequentially.
         @return: No return value.
     */
-    public void printNodes(){
-        if(this.head==null)
+    public void printNodes() {
+        if (this.head == null)
             System.out.println("No elements to print");
         else {
             INode tempNode = this.head;
-            while(tempNode.getNext()!=null){
-                System.out.print(tempNode.getKey()+"->");
-                tempNode=tempNode.getNext();
+            while (tempNode.getNext() != null) {
+                System.out.print(tempNode.getKey() + "->");
+                tempNode = tempNode.getNext();
             }
             System.out.println(tempNode.getKey());
         }
     }
 
-    public void insert(INode myNode,INode newNode) {
-        INode tempNode=myNode.getNext();
+    /*
+        @purpose: Ability insert a newNode after a node.
+        @param: takes mynode and new node.
+        @function : Inserts new node after mynode.
+        @return: No return value.
+    */
+    public void insert(INode myNode, INode newNode) {
+        INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
 
+    /*
+        @purpose: Ability to delete first node.
+        @param: No parameters.
+        @function : Deletes first node which is reference with head node.
+        @return: Returns Null if no nodes else returns the deleted node.
+    */
     public INode pop() {
-        if(this.head==null) {
+        if (this.head == null) {
             System.out.println("No elements to delete");
             return null;
-        }
-        else {
+        } else {
             INode tempNode = this.head;
-            this.head=this.head.getNext();
+            this.head = this.head.getNext();
             return tempNode;
+        }
+    }
+    /*
+        @purpose: Ability to delete last node.
+        @param: No parameters.
+        @function : Deletes tailNode.
+        @return: Returns Null if no nodes else returns the deleted node.
+    */
+
+    public INode popLast() {
+        if (this.head == null) {
+            System.out.println("No elements to delete");
+            return null;
+        } else {
+            INode tempNode = this.head;
+            while (tempNode.getNext().getNext() != null) {
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(null);
+            INode ret = this.tail;
+            this.tail = tempNode;
+            return ret;
         }
     }
 }

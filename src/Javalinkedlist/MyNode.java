@@ -1,7 +1,7 @@
 package Javalinkedlist;
 
-public class MyNode<K> {
-    private  MyNode next;
+public class MyNode<K> implements INode<K> {
+    private  INode next;
     private  K key;
 
     public MyNode(K key) {
@@ -12,12 +12,15 @@ public class MyNode<K> {
     public K getKey() {
         return this.key;
     }
+    public  void setKey(K key){
+        this.key=key;
+    }
 
-    public void setNext(MyNode next) {
+    public void setNext(INode next) {
         this.next=next;
     }
 
-    public MyNode getNext() {
+    public INode getNext() {
         return this.next;
     }
 }

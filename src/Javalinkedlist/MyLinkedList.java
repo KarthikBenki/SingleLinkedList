@@ -68,4 +68,16 @@ public class MyLinkedList {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
+
+    public INode pop() {
+        if(this.head==null) {
+            System.out.println("No elements to delete");
+            return null;
+        }
+        else {
+            INode tempNode = this.head;
+            this.head=this.head.getNext();
+            return tempNode;
+        }
+    }
 }

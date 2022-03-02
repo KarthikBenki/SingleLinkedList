@@ -120,7 +120,7 @@ public class MyLinkedList {
         @purpose: Ability to find desired node.
         @param: node to find.
         @function : finds the node which is having data asked ny the user.
-        @return: Returns node found.
+        @return: No returns.
     */
 
     public void search(INode myNode){
@@ -144,4 +144,25 @@ public class MyLinkedList {
             }
         }
     }
+
+    /*
+        @purpose: Ability to delete given node.
+        @param: node to delete.
+        @function : deletes the node which is having data asked by the user.
+        @return: No returns.
+    */
+    public void deleteNode(INode myNode){
+        if(this.head==null)
+            System.out.println("No elements to delete");
+        else{
+            INode tempNode=this.head;
+            while(tempNode!=null){
+                if(tempNode.getNext()==myNode){
+                    tempNode.setNext(tempNode.getNext().getNext());
+                }
+                tempNode=tempNode.getNext();
+            }
+        }
+    }
+
 }

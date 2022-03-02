@@ -13,6 +13,8 @@ public class MyLinkedListTest {
         myLinkedList.append(myThirdNode);
         myLinkedList.insert(mySecondNode,myFourthNode);
         myLinkedList.printNodes();
+        myLinkedList.deleteNode(myFourthNode);
+        myLinkedList.printNodes();
 
     }
 }

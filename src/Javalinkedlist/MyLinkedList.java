@@ -115,4 +115,33 @@ public class MyLinkedList {
             return ret;
         }
     }
+
+   /*
+        @purpose: Ability to find desired node.
+        @param: node to find.
+        @function : finds the node which is having data asked ny the user.
+        @return: Returns node found.
+    */
+
+    public void search(INode myNode){
+        if(this.head==null)
+            System.out.println("No elements to search");
+        else{
+            boolean flag=false;
+            INode tempNode=this.head;
+            while(tempNode!=null){
+                if(tempNode.getKey()==myNode.getKey()) {
+                    flag = true;
+                    break;
+                }
+                tempNode=tempNode.getNext();
+            }
+            if(flag==true){
+                System.out.println("Node found with data "+tempNode.getKey());
+            }
+            else{
+                System.out.println("Node not found");
+            }
+        }
+    }
 }

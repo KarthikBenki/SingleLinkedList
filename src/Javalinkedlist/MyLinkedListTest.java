@@ -11,9 +11,7 @@ public class MyLinkedListTest {
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.printNodes();
-        myLinkedList.popLast();
-        myLinkedList.printNodes();
-        myLinkedList.popLast();
-        myLinkedList.printNodes();
+        INode tempnode = new MyNode(30);
+        myLinkedList.search(tempnode);
     }
 }

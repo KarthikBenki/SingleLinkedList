@@ -165,4 +165,11 @@ public class MyLinkedList {
         }
     }
 
+    /*
+        @purpose: Ability to create ordered linked list in asending order.
+        @param: node to delete.
+        @function : deletes the node which is having data asked by the user.
+        @return: No returns.
+    */
+
 }

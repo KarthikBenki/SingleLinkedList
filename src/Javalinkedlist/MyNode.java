@@ -1,6 +1,6 @@
 package Javalinkedlist;
 
-public class MyNode<K> implements INode<K> {
+public class MyNode<K extends Comparable<K>> implements INode<K> {
     private  INode next;
     private  K key;
 
